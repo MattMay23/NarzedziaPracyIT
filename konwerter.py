@@ -16,9 +16,9 @@ def verify_json(json_example.json):
      data = json.load(dj_json):
       print ("Plik z rozszerzeniem .json jest poprawny składniowo.")
       return data
-   except json.JSONDecodeError as eRR:
+  except json.JSONDecodeError as eRR:
       print("Błąd składni pliku JSON:", str(eRR))
       return None
-   except FileNotFoundError:
+  except FileNotFoundError:
       print("Podany plik nie istnieje.")
       return None
