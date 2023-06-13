@@ -1,5 +1,6 @@
 import argparse
 import json
+import xmltodict as xml
 #Task1 - "Parsowanie(...)" 
 parser = argparse.ArgumentParser(description='Parsowanie')
 parser.add_argument('input_file', type=str, help='Nazwa pliku wejściowego')
@@ -64,5 +65,32 @@ shelter = Shelter(data["breed"], data["age"])
   filename = "shelterfdogs.yml"
 with open(filename, "w") as filet:
     yaml.dump(shelter_dict, filet)
-        
-
+class USA_states:
+  def __init__(self, name, population)
+  self.name = name
+  self.population = population
+filename = "usa_states.xml"
+try:
+  tree = xml.parse(filename)
+  root - tree.getroot()
+except FileNotFoundError:
+  print(f"Plik {filename} nie istnieje.")
+  exit()
+except xml.ParseError:
+  print("Błąd składni pliku XML.")
+  exit()
+#Weryfikowanie poprawności składni pliku
+if root.tag != "usa_states":
+  print("Błąd składni pliku."
+  exit()
+required_fields = ["name", "population"]
+for field in required_fields:
+    if root.find(field) is None:
+    print(f"Błąd składni.")
+    exit()
+#Wczytywanie danych do obiektu
+ name = root.find("name").text
+ population = int(root.find("population").text)
+ usa_states = USA_states(name, population)
+ 
+ print(f"Informacje o stanach w USA: \nNazwa: {usa_states.name}\nPopulation: {usa_states.population}")
