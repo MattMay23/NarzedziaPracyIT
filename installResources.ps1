@@ -1,3 +1,3 @@
 pip install argparse
 pip install json
-import yaml
+pip install yaml
