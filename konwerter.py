@@ -93,4 +93,9 @@ for field in required_fields:
  population = int(root.find("population").text)
  usa_states = USA_states(name, population)
  
+ filename = "save_states.xml"
+ tree = xml.ElementTree(root)
+ tree.write(filename)
+
  print(f"Informacje o stanach w USA: \nNazwa: {usa_states.name}\nPopulation: {usa_states.population}")
+ print(f"Dane zostały zapisane do pliku {filename} w formacie XML.")
