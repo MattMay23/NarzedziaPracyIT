@@ -22,3 +22,17 @@ def verify_json(json_example.json):
   except FileNotFoundError:
       print("Podany plik nie istnieje.")
       return None
+
+class Citizen:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+citizen = Citizen("Jan Kowalski", 33)
+citizen_dict = {
+  "name": citizen.name,
+  "age": citizen.age,
+}
+filename = "citizens.json"
+with open(filename, "w") as citizens:
+  json.dump(citizen_dict, file)
