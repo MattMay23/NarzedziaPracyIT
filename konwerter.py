@@ -36,3 +36,5 @@ citizen_dict = {
 filename = "citizens.json"
 with open(filename, "w") as citizens:
   json.dump(citizen_dict, file)
+  
+
