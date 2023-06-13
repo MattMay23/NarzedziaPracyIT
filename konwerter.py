@@ -56,6 +56,13 @@ for field in required_fields:
   if field not in data:
         print("Błąd składni pliku.")
         exit()
-shelter = Shelter(data["name"], data["age"])
+shelter_dict = {
+    "breed": shelter.breed,
+    "age": shelter.age
+ }
+shelter = Shelter(data["breed"], data["age"])
+  filename = "shelterfdogs.yml"
+with open(filename, "w") as filet:
+    yaml.dump(shelter_dict, filet)
         
 
