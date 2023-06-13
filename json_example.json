@@ -1,1 +1,17 @@
+import json
 
+//Przykładowe dane
+dane = {
+    "imie": "Jan",
+    "nazwisko": "Kowalski",
+    "wiek": 30,
+    "adres": {
+        "ulica": "Kwiatowa 1",
+        "miasto": "Warszawa",
+        "kod_pocztowy": "00-000"
+    },
+    "zainteresowania": ["programowanie", "podróże", "sport"]
+}
+//Zapisywanie danych
+with open("dane.json", "w") as plik:
+    json.dump(dane, plik)
