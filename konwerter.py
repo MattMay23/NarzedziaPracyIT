@@ -37,4 +37,25 @@ filename = "citizens.json"
 with open(filename, "w") as citizens:
   json.dump(citizen_dict, file)
   
+class Dog_Shelter(self, breed, age):
+  self.breed = breed
+  self.age = age
+ filename = "shelter.yml"
+try:
+  with open(filename, "r") as file:
+    data = yaml.safe_load(file)
+except FileNotFoundError:
+  print("Plik nie istnieje")
+  exit()
+#Weryfikacja poprawności składni pliku
+if not isinstance(data, dict):
+  print("Błąd składni pliku.")
+  exit()
+required_fields = ["name", "age"]
+for field in required_fields:
+  if field not in data:
+        print("Błąd składni pliku.")
+        exit()
+shelter = Shelter(data["name"], data["age"])
+        
 
